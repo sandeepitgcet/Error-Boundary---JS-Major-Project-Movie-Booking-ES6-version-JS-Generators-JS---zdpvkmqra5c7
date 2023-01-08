@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Component = (props) => {
     
-    const [error, setError] = useState(false);
-
+    const [error, setError] = useState(true);
+  useEffect(()=>{
+    setError(!error)
+  },[props.change])
   return (
     <>
     {    
-        error && <div>{somethingNotDefined}</div>
+        error && <div>Error occured</div>
     }
     </>
   );
